@@ -23,9 +23,15 @@ const getWeatherIcon = (temperature) => {
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
     const [loc] = searchData.value.split(" ");
+    
+    // Set loading state to true when fetching data starts
+    setLoading(true);
+    setError(null); // Reset error state
 
     const currentWeatherFetch = fetch(
       `${WEATHER_API_URL}?location=${loc}&apikey=${WEATHER_API_KEY}`
@@ -37,8 +43,8 @@ function App() {
     Promise.all([currentWeatherFetch, forecastFetch])
       .then(async (response) => {
         // Check if response status is ok
-        if (!response.every(res => res.ok)) {
-          throw new Error('Failed to fetch weather data');
+        if (!response.every((res) => res.ok)) {
+          throw new Error("Failed to fetch weather data");
         }
 
         const weatherResponse = await response[0].json();
@@ -46,25 +52,30 @@ function App() {
 
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
         setForecast({ city: searchData.label, ...forecastResponse });
+        setLoading(false); // Set loading state to false when data fetching is complete
       })
-      .catch(error => {
-        console.error('Error fetching weather data:', error.message);
-        // Optionally, you can update state or display an error message to the user
+      .catch((error) => {
+        console.error("Error fetching weather data:", error.message);
+        setError("Failed to fetch weather data"); // Set error state with appropriate message
+        setLoading(false); // Set loading state to false when error occurs
       });
   };
 
   return (
     <>
       <div className="container">
-        <div className="container-1">
           <Header />
           <Search onSearchChange={handleOnSearchChange} />
+          {/* Conditionally render loading indicator or error message */}
+          {loading && <p>Loading...</p>}
+          {error && <p>{error}</p>}
+          {/* Render current weather and forecast components if data is available */}
           {currentWeather && <CurrentWeather data={currentWeather} getWeatherIcon={getWeatherIcon} />}
+          
           {forecast && <Forecast data={forecast} getWeatherIcon={getWeatherIcon} />}
-        </div>
       </div>
     </>
   );
-}  
+}
 
 export default App;

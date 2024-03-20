@@ -1,7 +1,8 @@
 import React from "react";
 import "./current-weather.css";
 
-const CurrentWeather = ({ data,getWeatherIcon}) => {
+// CurrentWeather component to display current weather information
+const CurrentWeather = ({ data, getWeatherIcon }) => {
   // Convert the date string to a Date object
   const dateObject = new Date(data.data.time);
   // Extract the date part (YYYY-MM-DD)
@@ -10,10 +11,10 @@ const CurrentWeather = ({ data,getWeatherIcon}) => {
   // Get the appropriate weather icon based on temperature
   const weatherIcon = getWeatherIcon(Math.round(data.data.values.temperature));
 
-  console.log('current weather data is',data);
+  console.log('current weather data is', data);
+
   return (
     <div className="weather">
-        
       <div className="top">
         <div>
           <h2>Today</h2>
