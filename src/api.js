@@ -17,4 +17,4 @@ export const WEATHER_API_URL = "https://api.tomorrow.io/v4/weather/realtime";
 export const FORECAST_API_URL = "https://api.tomorrow.io/v4/weather/forecast";
 
 // API key for accessing Weather APIs
-export const WEATHER_API_KEY = "QxuJyRnYzkr4voYL4dxzI3oFTkEO5RaZ";
+export const WEATHER_API_KEY = "veMmpiy5gEYKMjbGdoTYc5Sj2sqRuMzD";
