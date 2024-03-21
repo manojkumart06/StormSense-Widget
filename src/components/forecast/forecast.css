@@ -106,7 +106,10 @@
   }
 
   .daily-details-grid-item {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
   }
 }
 
