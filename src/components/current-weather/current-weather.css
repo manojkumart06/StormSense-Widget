@@ -1,77 +1,144 @@
 .weather {
-    width: 400px;
-    height: 250px;
-    border-radius: 6px;
-    box-shadow: 10px -2px 20px 10px rgba(66, 254, 9, 0.3);
-    color: #fff;
-    background-color: #333;
-    margin: 30px auto 40px auto;
-    padding: 0 20px 20px 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 400px;
+  height: 250px;
+  border-radius: 6px;
+  box-shadow: 10px -2px 20px 10px rgba(66, 254, 9, 0.3);
+  color: #fff;
+  background-color: #333;
+  margin: 30px auto 40px auto;
+  padding: 0 20px 20px 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2{
+  color: #9decf9;
+  font-weight: 800;
+}
+
+.top,
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.weather-description {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1;
+  margin: 5px;
+  color: greenyellow;
+}
+
+.weather-icon {
+  width: 100px;
+}
+
+.temperature {
+  font-weight: 900;
+  font-size: 70px;
+  width: auto;
+  letter-spacing: -5px;
+  margin: 20px 10px;
+}
+
+.details {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.parameter-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.parameter-label {
+  text-align: left;
+  font-weight: 200;
+  font-size: 19px;
+}
+
+.parameter-value {
+  text-align: right;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.parameter-label.top {
+  border-bottom: 10px solid #df2525;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .weather {
+    width: 300px;
+    height: auto;
+    padding: 20px;
   }
 
-  h2{
-    color: #9decf9;
-    font-weight: 800;
-  }
-  
-  .top,
-  .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
   .city {
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 1;
-    margin: 0;
-    letter-spacing: 1px;
+    font-size: 24px;
   }
-  
+
   .weather-description {
-    font-weight: 500;
-    font-size: 1.3rem;
-    line-height: 1;
-    margin: 5px;
-    color: greenyellow;
+    font-size: 1.1rem;
   }
-  
+
   .weather-icon {
-    width: 100px;
+    width: 80px;
   }
-  
+
   .temperature {
-    font-weight: 900;
-    font-size: 70px;
-    width: auto;
-    letter-spacing: -5px;
-    margin: 20px 10px;
+    font-size: 50px;
+    margin: 10px 0;
   }
-  
-  .details {
-    width: 100%;
-    padding-left: 20px;
-  }
-  
-  .parameter-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
+
   .parameter-label {
-    text-align: left;
-    font-weight: 200;
-    font-size: 19px;
+    font-size: 16px;
   }
-  
+
   .parameter-value {
-    text-align: right;
-    font-weight: 600;
-    font-size: 18px;
+    font-size: 15px;
   }
-  
-  .parameter-label.top {
-    border-bottom: 10px solid #df2525;
+}
+
+@media only screen and (max-width: 480px) {
+  .weather {
+    width: 250px;
+    height: auto;
+    padding: 15px;
   }
+
+  .city {
+    font-size: 20px;
+  }
+
+  .weather-description {
+    font-size: 1rem;
+  }
+
+  .weather-icon {
+    width: 60px;
+  }
+
+  .temperature {
+    font-size: 40px;
+    margin: 5px 0;
+  }
+
+  .parameter-label {
+    font-size: 14px;
+  }
+
+  .parameter-value {
+    font-size: 13px;
+  }
+}

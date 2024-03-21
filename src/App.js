@@ -8,17 +8,21 @@ import Header from "./components/header/Header";
 import sunnyIcon from "./icons/sunnyicon.png";
 import cloudyIcon from "./icons/cloudyicon.png";
 import snowyIcon from "./icons/snowicon.png";
+import sunnyClodyIcon from "./icons/sunny_cloudy.png"
 
 // Define the getWeatherIcon function
 const getWeatherIcon = (temperature) => {
   if (temperature < 0) {
     return snowyIcon;
-  } else if (temperature < 15) {
+  } else if (temperature < 10) {
     return cloudyIcon;
-  } else {
+  } else if (temperature > 27) {
     return sunnyIcon;
+  } else {
+    return sunnyClodyIcon; 
   }
 };
+
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);

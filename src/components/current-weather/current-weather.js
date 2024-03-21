@@ -11,7 +11,7 @@ const CurrentWeather = ({ data, getWeatherIcon }) => {
   // Get the appropriate weather icon based on temperature
   const weatherIcon = getWeatherIcon(Math.round(data.data.values.temperature));
 
-  console.log('current weather data is', data);
+  console.log('current weather data is', data.data.time);
 
   return (
     <div className="weather">

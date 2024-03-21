@@ -6,7 +6,10 @@
     margin-left: 20px;
     font-size: 30px;
     font-weight: 1000;
-    color: rgb(244, 6, 66);
+    color: transparent;
+    background: linear-gradient(to right, #645de4, #fc0516); 
+    -webkit-background-clip: text; /* Apply background-clip to text */
+    background-clip: text; /* Apply background-clip to text */
   }
   
   .daily-item {
@@ -79,3 +82,58 @@
   .daily-details-grid-item label:last-child {
     color: #12cd9b;
   }
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .daily-item {
+    font-size: 1.1rem;
+  }
+
+  .icon-small {
+    width: 40px;
+  }
+
+  .daily-item .day {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .daily-details-grid-item {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .title {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .daily-item {
+    font-size: 1rem;
+    padding: 5px 15px;
+  }
+
+  .icon-small {
+    width: 30px;
+  }
+
+  .daily-item .day {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .daily-details-grid-item {
+    font-size: 0.9rem;
+  }
+}
