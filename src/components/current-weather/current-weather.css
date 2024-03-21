@@ -62,8 +62,13 @@ h2{
 
 .parameter-label {
   text-align: left;
-  font-weight: 200;
+  font-weight: 100;
   font-size: 19px;
+}
+
+.deatiled-tag {
+  font-weight: 800;
+  color: #f9e108;
 }
 
 .parameter-value {

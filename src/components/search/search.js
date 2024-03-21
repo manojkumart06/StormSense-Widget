@@ -18,7 +18,7 @@ const Search = ({ onSearchChange }) => {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log("Response from API:", response);
+        //console.log("Response from API:", response);
         setLoadingOptions(false); // Set loading state to false when options are fetched
         return {
           options: response.data.map((city) => {

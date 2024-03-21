@@ -15,8 +15,8 @@ const Forecast = ({ data, getWeatherIcon }) => {
   const dayInAWeek = new Date().getDay();
   const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInAWeek));
 
-  console.log('Forecast data is', data);
-  console.log('daily wise', data.timelines.daily);
+  //console.log('Forecast data is', data);
+  //console.log('daily wise', data.timelines.daily);
 
   return (
     <>
@@ -37,11 +37,11 @@ const Forecast = ({ data, getWeatherIcon }) => {
               <div className="daily-details-grid">
                 <div className="daily-details-grid-item">
                   <label>Pressure :</label>
-                  <label>{item.values.pressureSurfaceLevelMax}</label>
+                  <label>{item.values.pressureSurfaceLevelMax} Pa</label>
                 </div>
                 <div className="daily-details-grid-item">
                   <label>Humidity :</label>
-                  <label>{item.values.humidityAvg}</label>
+                  <label>{item.values.humidityAvg}%</label>
                 </div>
                 <div className="daily-details-grid-item">
                   <label>Clouds :</label>
