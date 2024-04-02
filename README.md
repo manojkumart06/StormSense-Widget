@@ -30,7 +30,7 @@ This project is a simple weather application built using React (for web). The pu
 - Geolocation: Geolocation functionality is implemented to fetch weather data based on the user’s current location.
 
 ## Live Demo:
-- [Demo Link](#) 
+- [Demo Link](https://stormsensewidget.netlify.app/) 
 
 ## Testing:
 - No specific testing instructions provided.
